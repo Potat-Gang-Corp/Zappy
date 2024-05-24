@@ -53,3 +53,13 @@ dkms.conf
 
 Doxyfile
 docs/*
+*.pdf
+*.gcda
+*.gcno
+
+zappy_server
+
+*.vscode/
+*.idea/
+
+docs/
