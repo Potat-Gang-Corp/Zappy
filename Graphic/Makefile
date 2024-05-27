@@ -45,7 +45,7 @@ $(TTarget): $(TOBJS) $(OBJS_NO_MAIN)
 	@$(CXX) -o $(TTarget) $(TOBJS) $(OBJS_NO_MAIN) $(RAY_LIB) -lcriterion $(INCLUDES) $(COVERAGE_FLAGS)
 	@echo -e "$(GREEN)Unit tests compiled successfully!$(RESET)"
 
-test_runs: $(TTarget)
+tests_run: $(TTarget)
 	@echo -e "$(YELLOW)Running unit tests...$(RESET)"
 	./$(TTarget)
 	@gcovr -r . --exclude 'tests/*'
