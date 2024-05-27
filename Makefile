@@ -16,18 +16,21 @@ zappy_server:
 
 zappy_ai:
 	@make -C IA/
-	mv Server/zappy_ai .
+	mv IA/zappy_ai .
 
 zappy_gui:
 	@make -C Graphic/
-	mv Server/zappy_server .
+	mv Graphic/zappy_server .
 
 clean:
 	@make clean -C Server/
 	@make clean -C IA/
 	@make clean -C Graphic/
+	rm -rf zappy_server
+	rm -rf zappy_ai
+	rm -rf zappy_gui
 
-fclean:
+fclean: clean
 	@make fclean -C Server/
 	@make fclean -C IA/
 	@make fclean -C Graphic/
