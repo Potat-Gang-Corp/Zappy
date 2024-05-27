@@ -86,8 +86,10 @@ int handle_flags(int ac, char **av)
     int i;
     game_t *game = get_game_instance();
 
-    if (ac == 2 && (strcmp(av[1], "-help") == 0 || strcmp(av[1], "-h") == 0))
+    if (ac == 2 && (strcmp(av[1], "-help") == 0 || strcmp(av[1], "-h") == 0)) {
         display_help();
+        return 84;
+    }
     for (i = 1; i < ac; i++) {
         if (handle_flags_bis(ac, av, i, &flags_present) == 84)
             return 84;
