@@ -14,6 +14,7 @@ RESET  := \033[0m
 SRC_DIR := src
 
 RAY_LIB := -lraylib -lm -lpthread -ldl -lrt -lX11
+
 COVERAGE_FLAGS := -fprofile-arcs -ftest-coverage
 
 TSRCS = $(wildcard tests/unit-tests/*.cpp)
