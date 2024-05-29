@@ -5,10 +5,10 @@
 ## Makefile
 ##
 
-GREEN  := \033[0;32m
+GREEN  := \033[1;32m
 YELLOW := \033[1;33m
 BLUE   := \033[1;34m
-RED    := \033[0;31m
+RED    := \033[1;31m
 RESET  := \033[0m
 
 SRC_DIR := src
@@ -19,9 +19,10 @@ COVERAGE_FLAGS := -fprofile-arcs -ftest-coverage
 TSRCS = $(wildcard tests/unit-tests/*.cpp)
 
 SRCS := $(wildcard \
-				$(SRC_DIR)/*.cpp \
-				$(SRC_DIR)/Player/*.cpp \
-				$(SRC_DIR)/Team/*.cpp)
+		$(SRC_DIR)/*.cpp \
+		$(SRC_DIR)/Player/*.cpp \
+		$(SRC_DIR)/Team/*.cpp \
+		$(SRC_DIR)/Raylib/*.cpp)
 
 SRCS_NO_MAIN = $(filter-out src/main.cpp, $(SRCS))
 
@@ -29,7 +30,8 @@ OBJS_NO_MAIN = $(SRCS_NO_MAIN:.c=.o)
 
 INCLUDES := -I./src \
 			-I./src/Player \
-			-I./src/Team
+			-I./src/Team \
+			-I./src/Raylib \
 
 OBJS := $(SRCS:.cpp=.o)
 TOBJS = $(TSRCS:.cpp=.o)
