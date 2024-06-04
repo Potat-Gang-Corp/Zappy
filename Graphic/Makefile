@@ -20,10 +20,11 @@ COVERAGE_FLAGS := -fprofile-arcs -ftest-coverage
 TSRCS = $(wildcard tests/unit-tests/*.cpp)
 
 SRCS := $(wildcard \
-		$(SRC_DIR)/*.cpp \
-		$(SRC_DIR)/Player/*.cpp \
-		$(SRC_DIR)/Team/*.cpp \
-		$(SRC_DIR)/Raylib/*.cpp)
+			$(SRC_DIR)/*.cpp \
+			$(SRC_DIR)/Player/*.cpp \
+			$(SRC_DIR)/Team/*.cpp \
+			$(SRC_DIR)/Raylib/*.cpp \
+			$(SRC_DIR)/Server/*.cpp)
 
 SRCS_NO_MAIN = $(filter-out src/main.cpp, $(SRCS))
 
@@ -33,11 +34,12 @@ INCLUDES := -I./src \
 			-I./src/Player \
 			-I./src/Team \
 			-I./src/Raylib \
+			-I./src/Server
 
 OBJS := $(SRCS:.cpp=.o)
 TOBJS = $(TSRCS:.cpp=.o)
 
-TARGET := zappy_graphic
+TARGET := zappy_gui
 
 TTarget := unit-tests
 
