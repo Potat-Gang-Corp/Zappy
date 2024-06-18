@@ -1,0 +1,41 @@
+<map id="get_game_instance" name="get_game_instance">
+<area shape="rect" id="node1" title="Function that return the game instance." alt="" coords="1356,546,1491,573"/>
+<area shape="rect" id="node2" href="$server_8h.html#aad2e7f16190d9a4ea8845bbe69cea077" title="Function to compute the execution time of a command." alt="" coords="1140,116,1293,142"/>
+<area shape="rect" id="node8" href="$server_8h.html#a79e0425c7fffb7dba1c73cdd86117aa1" title="Function to check if the team name is valid or not." alt="" coords="935,14,1077,41"/>
+<area shape="rect" id="node13" href="$handle__flags_8h.html#abd5bd91adc80092487e42621bc108c39" title="Function that check the existence of a definition for c flag." alt="" coords="1179,369,1254,396"/>
+<area shape="rect" id="node16" href="$handle__flags_8h.html#a90df9fdfc1c81ca741a635ff9d8ff1f9" title="Function that allows to handle the flags." alt="" coords="427,648,522,674"/>
+<area shape="rect" id="node21" href="$handle__flags_8h.html#a26c62e26b51b4fcea3aadc2c6ca48a29" title="Function that check the existence of a definition for f flag." alt="" coords="1181,546,1252,573"/>
+<area shape="rect" id="node23" href="$handle__flags_8h.html#a121f1dd0a33dc9fdcbb1661461111efa" title="Function that check the existence of a definition for n flag." alt="" coords="1179,268,1254,294"/>
+<area shape="rect" id="node24" href="$handle__flags_8h.html#aebb27e7ee0de2bd65cc0831ad626956c" title="Function that check the existence of the definition for the n flag." alt="" coords="947,217,1065,244"/>
+<area shape="rect" id="node26" href="$handling__login__phase_8c.html#a0ec5336888b13379a3efa39b7a8e7a94" title=" " alt="" coords="1157,65,1277,92"/>
+<area shape="rect" id="node27" href="$handle__flags_8h.html#a94ef95b916589435cae2257694b1bff9" title="Function that check the existence of a definition for x flag." alt="" coords="1179,470,1254,497"/>
+<area shape="rect" id="node30" href="$handle__flags_8h.html#a9dbe8e07a2c4ed98e33e9ce6df59668c" title="Function that check the existence of a definition for y flag." alt="" coords="1179,622,1254,649"/>
+<area shape="rect" id="node32" href="$handle__flags_8c.html#a29e2746e5d94ac094086614d4f2f2652" title=" " alt="" coords="788,774,871,801"/>
+<area shape="rect" id="node33" href="$server_8h.html#a7af49a73e651d83a50b4190d6380c015" title="Function that launch the select protocol." alt="" coords="1161,166,1272,193"/>
+<area shape="rect" id="node35" href="$test__accept__cli_8c.html#a7dfd9b79bc5a37d7df40207afbc5431f" title=" " alt="" coords="1189,825,1244,852"/>
+<area shape="rect" id="node36" href="$test__command__detection_8c.html#ad1bf9c61461b06df1d65e04302d66e03" title=" " alt="" coords="1135,876,1298,902"/>
+<area shape="rect" id="node37" href="$test__op__cli__ll_8c.html#a1d625b9b99efd253572667237f7156c0" title=" " alt="" coords="1155,926,1279,953"/>
+<area shape="rect" id="node38" href="$test__send__requests_8c.html#a82326bef0f8b1a616fe07b0a591ba076" title=" " alt="" coords="1125,977,1308,1004"/>
+<area shape="rect" id="node39" href="$test__flags_8c.html#af997942d78b2751d3f389e848e3b673f" title=" " alt="" coords="1193,1028,1240,1054"/>
+<area shape="rect" id="node3" href="$server_8h.html#a6c98217139cd34acd074e25ec86165e7" title="Function that detect command of the client and add it to the linked list." alt="" coords="942,65,1070,92"/>
+<area shape="rect" id="node7" href="$test__timer__func_8c.html#af3542ebfc35bd98644997bf868abc46e" title=" " alt="" coords="983,116,1029,142"/>
+<area shape="rect" id="node4" href="$server_8h.html#a2af9cb4e01f9d692995c4cf9e317cc39" title="Function that handle the clients." alt="" coords="607,78,712,105"/>
+<area shape="rect" id="node5" href="$server_8h.html#ab908d7ddfa0f059e06a50923ae87eb6c" title="Function that run the server." alt="" coords="104,141,187,168"/>
+<area shape="rect" id="node6" href="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,496,56,522"/>
+<area shape="rect" id="node9" href="$server_8h.html#a6e6e87a109290606b465ec933985ee69" title="Function to handle the client login phase." alt="" coords="772,18,887,45"/>
+<area shape="rect" id="node10" href="$send__cli__answers_8c.html#a6d8a5ff436eaec0a941ecc8ae39d2600" title=" " alt="" coords="595,22,724,49"/>
+<area shape="rect" id="node11" href="$server_8h.html#af3a987c41fd3de1111b6cc22815a0103" title="Function to execute the client commands." alt="" coords="403,40,547,66"/>
+<area shape="rect" id="node12" href="$server_8h.html#a32796ec69553e86bb65e28d498dbcfd7" title="Function to load the profile and execute the command." alt="" coords="235,40,355,66"/>
+<area shape="rect" id="node14" href="$handle__flags_8h.html#af41f3998e39ed8d60bf7aaa86bd9b3a2" title="Function that check the existence of a definition for n, c and f flags." alt="" coords="780,470,879,497"/>
+<area shape="rect" id="node20" href="$test__handle__n__c__f_8c.html#a5d252f60b55bef8c8cf529c4c5bc64ae" title=" " alt="" coords="983,318,1029,345"/>
+<area shape="rect" id="node15" href="$handle__flags_8h.html#ae614c286a56a92cd58469476c90ca21b" title="Function that allows to handle the flags." alt="" coords="600,470,719,497"/>
+<area shape="rect" id="node19" href="$test__handle__n__c__f_8c.html#ada62d4c4b99c39e693f6d7ca0d9b95a4" title=" " alt="" coords="636,521,683,548"/>
+<area shape="rect" id="node18" href="$test__flags_8c.html#a9e8a54decc80c8f87ebdec2fb100dc0a" title=" " alt="" coords="451,470,498,497"/>
+<area shape="rect" id="node17" href="$test__flags_8c.html#a49542114bcd762a46e43d6ecbafe9e4d" title=" " alt="" coords="271,597,318,624"/>
+<area shape="rect" id="node22" href="$test__handle__n__c__f_8c.html#aa4b7297671bc71a1487fbaf608f447e9" title=" " alt="" coords="983,572,1029,598"/>
+<area shape="rect" id="node25" href="$test__handle__n__c__f_8c.html#a45bc53ebcd5da53920e172f2cd920d7f" title=" " alt="" coords="983,268,1029,294"/>
+<area shape="rect" id="node28" href="$handle__flags_8h.html#ab823c4a37b15b9105c18a27dc7953459" title="Function that check the existence of a definition for y and x flags." alt="" coords="785,521,873,548"/>
+<area shape="rect" id="node29" href="$test__handle__p__x__y_8c.html#a4a802f896f4b86bcc83f593b72ee6c87" title=" " alt="" coords="983,420,1029,446"/>
+<area shape="rect" id="node31" href="$test__handle__p__x__y_8c.html#a420f5b556160b97d731916291b6ca42b" title=" " alt="" coords="983,622,1029,649"/>
+<area shape="rect" id="node34" href="$server_8h.html#ad3069659828a1dbd8e258ea6725a8563" title="Function that prepare the select protocol." alt="" coords="251,166,339,193"/>
+</map>

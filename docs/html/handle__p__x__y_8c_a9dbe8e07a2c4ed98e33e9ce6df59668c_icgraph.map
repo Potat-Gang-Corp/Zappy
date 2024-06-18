@@ -1,0 +1,11 @@
+<map id="handle_y" name="handle_y">
+<area shape="rect" id="node1" title="Function that check the existence of a definition for y flag." alt="" coords="549,107,624,133"/>
+<area shape="rect" id="node2" href="$handle__flags_8h.html#ab823c4a37b15b9105c18a27dc7953459" title="Function that check the existence of a definition for y and x flags." alt="" coords="413,81,501,108"/>
+<area shape="rect" id="node9" href="$test__handle__p__x__y_8c.html#a420f5b556160b97d731916291b6ca42b" title=" " alt="" coords="434,132,481,159"/>
+<area shape="rect" id="node3" href="$handle__flags_8h.html#ae614c286a56a92cd58469476c90ca21b" title="Function that allows to handle the flags." alt="" coords="247,56,365,83"/>
+<area shape="rect" id="node8" href="$test__handle__n__c__f_8c.html#ada62d4c4b99c39e693f6d7ca0d9b95a4" title=" " alt="" coords="283,107,329,133"/>
+<area shape="rect" id="node4" href="$handle__flags_8h.html#a90df9fdfc1c81ca741a635ff9d8ff1f9" title="Function that allows to handle the flags." alt="" coords="104,31,199,57"/>
+<area shape="rect" id="node7" href="$test__flags_8c.html#a9e8a54decc80c8f87ebdec2fb100dc0a" title=" " alt="" coords="128,81,175,108"/>
+<area shape="rect" id="node5" href="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+<area shape="rect" id="node6" href="$test__flags_8c.html#a49542114bcd762a46e43d6ecbafe9e4d" title=" " alt="" coords="7,56,54,83"/>
+</map>

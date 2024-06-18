@@ -1,0 +1,7 @@
+<map id="detect_team_validity" name="detect_team_validity">
+<area shape="rect" id="node1" title="Function to check if the team name is valid or not." alt="" coords="5,31,148,57"/>
+<area shape="rect" id="node2" href="$get__instance_8h.html#a1703d587886f74328ade68d9dccf9b03" title="Function that return the game instance." alt="" coords="364,5,499,32"/>
+<area shape="rect" id="node3" href="$handling__login__phase_8c.html#a0ec5336888b13379a3efa39b7a8e7a94" title=" " alt="" coords="196,56,316,83"/>
+<area shape="rect" id="node4" href="$server_8h.html#a0874a9e14eb0bcbd592535245e3157f8" title="Function that add the client to the waiting list." alt="" coords="365,56,498,83"/>
+<area shape="rect" id="node5" href="$get__instance_8h.html#a98ba833762de1933d74b19d1f5f756c0" title="Function that return the server instance." alt="" coords="547,56,643,83"/>
+</map>

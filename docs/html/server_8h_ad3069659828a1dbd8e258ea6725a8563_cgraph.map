@@ -1,0 +1,7 @@
+<map id="select_loop" name="select_loop">
+<area shape="rect" id="node1" title="Function that prepare the select protocol." alt="" coords="5,31,93,57"/>
+<area shape="rect" id="node2" href="$get__instance_8h.html#a98ba833762de1933d74b19d1f5f756c0" title="Function that return the server instance." alt="" coords="331,5,427,32"/>
+<area shape="rect" id="node3" href="$select__cli_8c.html#a2191f26d54330b8f68afea14499a22ff" title=" " alt="" coords="141,31,264,57"/>
+<area shape="rect" id="node4" href="$select__cli_8c.html#a7af49a73e651d83a50b4190d6380c015" title="Function that launch the select protocol." alt="" coords="147,81,258,108"/>
+<area shape="rect" id="node5" href="$get__instance_8h.html#a1703d587886f74328ade68d9dccf9b03" title="Function that return the game instance." alt="" coords="312,81,447,108"/>
+</map>

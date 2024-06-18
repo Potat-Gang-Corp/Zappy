@@ -1,0 +1,4 @@
+<map id="init_socket" name="init_socket">
+<area shape="rect" id="node1" title="Function that init the socket of the server." alt="" coords="5,5,91,32"/>
+<area shape="rect" id="node2" href="$get__instance_8h.html#a98ba833762de1933d74b19d1f5f756c0" title="Function that return the server instance." alt="" coords="139,5,235,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="server_s" name="server_s">
+<area shape="rect" id="node1" title=" " alt="" coords="43,95,115,121"/>
+<area shape="rect" id="node2" href="$structclient__t.html" title="struct that holds the client/player data" alt="" coords="5,5,69,32"/>
+<area shape="rect" id="node3" href="$structstruct.html" title="struct for the position as well as orientation of the player" alt="" coords="94,5,149,32"/>
+</map>

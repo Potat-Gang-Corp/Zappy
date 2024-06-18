@@ -1,0 +1,8 @@
+<map id="init_server" name="init_server">
+<area shape="rect" id="node1" title="Function that init the server struct parameters." alt="" coords="5,9,88,36"/>
+<area shape="rect" id="node2" href="$get__instance_8h.html#a98ba833762de1933d74b19d1f5f756c0" title="Function that return the server instance." alt="" coords="633,60,729,87"/>
+<area shape="rect" id="node3" href="$init__server_8c.html#a789b65ecefcb9d373e1c47afe8783eeb" title="Function that init the construction process of the server." alt="" coords="136,35,243,61"/>
+<area shape="rect" id="node4" href="$init__server_8c.html#afc5512e5c2b10ac4e860137b226a98ec" title="Function that init the launch of the server." alt="" coords="291,60,417,87"/>
+<area shape="rect" id="node6" href="$init__server_8c.html#a125a40ad0f3e1223dd09a8a1bc3a4a34" title="Function that init the socket of the server." alt="" coords="483,161,568,188"/>
+<area shape="rect" id="node5" href="$init__server_8c.html#aeacf721668bbb5a284dbcc819435bf67" title="Function that init the listening of the server." alt="" coords="465,111,585,137"/>
+</map>

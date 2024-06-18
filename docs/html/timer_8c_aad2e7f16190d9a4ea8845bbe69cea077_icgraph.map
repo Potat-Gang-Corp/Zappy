@@ -1,0 +1,8 @@
+<map id="detect_execution_time" name="detect_execution_time">
+<area shape="rect" id="node1" title="Function to compute the execution time of a command." alt="" coords="564,31,717,57"/>
+<area shape="rect" id="node2" href="$server_8h.html#a6c98217139cd34acd074e25ec86165e7" title="Function that detect command of the client and add it to the linked list." alt="" coords="388,5,516,32"/>
+<area shape="rect" id="node6" href="$test__timer__func_8c.html#af3542ebfc35bd98644997bf868abc46e" title=" " alt="" coords="429,56,475,83"/>
+<area shape="rect" id="node3" href="$server_8h.html#a2af9cb4e01f9d692995c4cf9e317cc39" title="Function that handle the clients." alt="" coords="235,5,340,32"/>
+<area shape="rect" id="node4" href="$server_8h.html#ab908d7ddfa0f059e06a50923ae87eb6c" title="Function that run the server." alt="" coords="104,5,187,32"/>
+<area shape="rect" id="node5" href="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>

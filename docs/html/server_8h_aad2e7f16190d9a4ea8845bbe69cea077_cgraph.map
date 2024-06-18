@@ -1,0 +1,4 @@
+<map id="detect_execution_time" name="detect_execution_time">
+<area shape="rect" id="node1" title="Function to compute the execution time of a command." alt="" coords="5,5,159,32"/>
+<area shape="rect" id="node2" href="$get__instance_8h.html#a1703d587886f74328ade68d9dccf9b03" title="Function that return the game instance." alt="" coords="207,5,341,32"/>
+</map>

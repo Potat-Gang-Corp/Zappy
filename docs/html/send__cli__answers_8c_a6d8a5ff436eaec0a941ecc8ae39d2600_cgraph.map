@@ -1,0 +1,12 @@
+<map id="load_cli_and_exec" name="load_cli_and_exec">
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,135,133"/>
+<area shape="rect" id="node2" href="$server_8h.html#ad9111a988319f48f583f7a19f1d16d65" title="Function to execute the game commands." alt="" coords="183,56,321,83"/>
+<area shape="rect" id="node5" href="$get__instance_8h.html#a98ba833762de1933d74b19d1f5f756c0" title="Function that return the server instance." alt="" coords="911,157,1007,184"/>
+<area shape="rect" id="node6" href="$server_8h.html#a6e6e87a109290606b465ec933985ee69" title="Function to handle the client login phase." alt="" coords="195,157,309,184"/>
+<area shape="rect" id="node3" href="$handling__game__command_8c.html#a8cc150e3ff2182727a5789b3820130da" title="Function to compare the command type." alt="" coords="397,5,484,32"/>
+<area shape="rect" id="node4" href="$handling__game__command_8c.html#a36f66045fe51c77e2d32f6f0b1168dbb" title="Function to compare the command type." alt="" coords="385,56,496,83"/>
+<area shape="rect" id="node7" href="$handling__login__phase_8c.html#a79e0425c7fffb7dba1c73cdd86117aa1" title="Function to check if the team name is valid or not." alt="" coords="369,157,512,184"/>
+<area shape="rect" id="node8" href="$get__instance_8h.html#a1703d587886f74328ade68d9dccf9b03" title="Function that return the game instance." alt="" coords="728,157,863,184"/>
+<area shape="rect" id="node9" href="$handling__login__phase_8c.html#a0ec5336888b13379a3efa39b7a8e7a94" title=" " alt="" coords="560,208,680,235"/>
+<area shape="rect" id="node10" href="$server_8h.html#a0874a9e14eb0bcbd592535245e3157f8" title="Function that add the client to the waiting list." alt="" coords="729,208,862,235"/>
+</map>

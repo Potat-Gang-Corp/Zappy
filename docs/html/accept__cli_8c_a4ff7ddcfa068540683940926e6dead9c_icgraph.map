@@ -1,0 +1,5 @@
+<map id="accept_new_client" name="accept_new_client">
+<area shape="rect" id="node1" title="Function that accept a new client connection." alt="" coords="235,5,365,32"/>
+<area shape="rect" id="node2" href="$server_8h.html#ab908d7ddfa0f059e06a50923ae87eb6c" title="Function that run the server." alt="" coords="104,5,187,32"/>
+<area shape="rect" id="node3" href="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>

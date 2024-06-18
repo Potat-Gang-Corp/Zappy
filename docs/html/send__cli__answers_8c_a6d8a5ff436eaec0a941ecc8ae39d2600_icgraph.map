@@ -1,0 +1,7 @@
+<map id="load_cli_and_exec" name="load_cli_and_exec">
+<area shape="rect" id="node1" title=" " alt="" coords="595,5,724,32"/>
+<area shape="rect" id="node2" href="$server_8h.html#af3a987c41fd3de1111b6cc22815a0103" title="Function to execute the client commands." alt="" coords="403,5,547,32"/>
+<area shape="rect" id="node3" href="$server_8h.html#a32796ec69553e86bb65e28d498dbcfd7" title="Function to load the profile and execute the command." alt="" coords="235,5,355,32"/>
+<area shape="rect" id="node4" href="$server_8h.html#ab908d7ddfa0f059e06a50923ae87eb6c" title="Function that run the server." alt="" coords="104,5,187,32"/>
+<area shape="rect" id="node5" href="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Test" name="Test">
+<area shape="rect" id="node1" title=" " alt="" coords="5,29,52,56"/>
+<area shape="rect" id="node2" href="$get__instance_8h.html#a98ba833762de1933d74b19d1f5f756c0" title="Function that return the server instance." alt="" coords="443,42,539,69"/>
+<area shape="rect" id="node3" href="$server_8h.html#afc5512e5c2b10ac4e860137b226a98ec" title="Function that init the launch of the server." alt="" coords="100,29,227,56"/>
+<area shape="rect" id="node5" href="$test__init__server_8c.html#a2081dd4d0c9345635697c82e47659c6a" title=" " alt="" coords="286,118,383,145"/>
+<area shape="rect" id="node4" href="$init__server_8c.html#aeacf721668bbb5a284dbcc819435bf67" title="Function that init the listening of the server." alt="" coords="275,68,395,94"/>
+</map>

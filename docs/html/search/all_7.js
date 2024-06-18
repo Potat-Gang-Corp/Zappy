@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['game_83',['game',['../test__send__requests_8c.html#a76176e88b0b13650fed2c5f873eb7d45',1,'test_send_requests.c']]],
+  ['game_5fcollect_84',['game_collect',['../test__command__detection_8c.html#a5d89d3c43bbf2452b4380fca3e43e075',1,'test_command_detection.c']]],
+  ['game_5finstance_85',['game_instance',['../test__accept__cli_8c.html#a8c1b5af43acef6dd34f7bdc8d8400523',1,'test_accept_cli.c']]],
+  ['game_5finstance_5fremove_5fcli_86',['game_instance_remove_cli',['../test__op__cli__ll_8c.html#a4ef82e5919d8996524ed470c504306aa',1,'test_op_cli_ll.c']]],
+  ['game_5fs_87',['game_s',['../structgame__s.html',1,'']]],
+  ['game_5ft_88',['game_t',['../struct__game_8h.html#a6039f87d8d4a80e0c5c9c48b5c6af926',1,'struct_game.h']]],
+  ['get_5fgame_5finstance_89',['get_game_instance',['../get__instance_8c.html#a1703d587886f74328ade68d9dccf9b03',1,'get_game_instance(void):&#160;get_instance.c'],['../get__instance_8h.html#a1703d587886f74328ade68d9dccf9b03',1,'get_game_instance(void):&#160;get_instance.c']]],
+  ['get_5finstance_90',['get_instance',['../get__instance_8c.html#a98ba833762de1933d74b19d1f5f756c0',1,'get_instance(void):&#160;get_instance.c'],['../get__instance_8h.html#a98ba833762de1933d74b19d1f5f756c0',1,'get_instance(void):&#160;get_instance.c']]],
+  ['get_5finstance_2ec_91',['get_instance.c',['../get__instance_8c.html',1,'']]],
+  ['get_5finstance_2eh_92',['get_instance.h',['../get__instance_8h.html',1,'']]],
+  ['get_5fmap_5finstance_93',['get_map_instance',['../get__instance_8h.html#a8804dfd28d73eed58e7e6fcf3e39150d',1,'get_map_instance(void):&#160;get_instance.c'],['../get__instance_8c.html#a8804dfd28d73eed58e7e6fcf3e39150d',1,'get_map_instance(void):&#160;get_instance.c']]],
+  ['getlevel_94',['getLevel',['../classPlayer.html#a1d0d5551086ebf6b5e4407d98697f8e0',1,'Player']]],
+  ['getname_95',['getName',['../classTeam.html#abd78875654e91bf887ecd2f915f4a0b3',1,'Team']]],
+  ['getnumber_96',['getNumber',['../classPlayer.html#a16c392bca630b25b15569e5bc4a250c9',1,'Player']]],
+  ['getorientation_97',['getOrientation',['../classPlayer.html#a93deab2db8c50114346142f7f72f678e',1,'Player']]],
+  ['getplayerdata_98',['getPlayerData',['../classPlayer.html#ac9931e463dab5abb74b86f4374c84a45',1,'Player']]],
+  ['getplayers_99',['getPlayers',['../classTeam.html#a19b5b033a667d2150dc5d60c95361694',1,'Team']]],
+  ['getposx_100',['getPosX',['../classPlayer.html#a1855ae5f29f7f22a4699733692e48fce',1,'Player']]],
+  ['getposy_101',['getPosY',['../classPlayer.html#a06487efec49f46828c3167bbe122bde7',1,'Player']]],
+  ['getteamname_102',['getTeamName',['../classPlayer.html#abc82c08b0c33f2fff6cd057972357824',1,'Player']]],
+  ['go_5fto_5fneed_103',['go_to_need',['../namespacezappy__ai.html#a04330665937c4b75b76f4b53046827bd',1,'zappy_ai']]],
+  ['going_5fforward_104',['going_forward',['../namespacezappy__ai.html#a4fcac803d7753790618ed33b503f4235',1,'zappy_ai']]]
+];

@@ -1,0 +1,11 @@
+<map id="init_server_listen" name="init_server_listen">
+<area shape="rect" id="node1" title="Function that init the listening of the server." alt="" coords="564,107,684,133"/>
+<area shape="rect" id="node2" href="$server_8h.html#afc5512e5c2b10ac4e860137b226a98ec" title="Function that init the launch of the server." alt="" coords="389,81,516,108"/>
+<area shape="rect" id="node9" href="$test__init__server_8c.html#aa0e1b2d1b64396abe43eb55c2b4521b7" title=" " alt="" coords="429,132,476,159"/>
+<area shape="rect" id="node3" href="$server_8h.html#a789b65ecefcb9d373e1c47afe8783eeb" title="Function that init the construction process of the server." alt="" coords="235,56,341,83"/>
+<area shape="rect" id="node8" href="$test__init__server_8c.html#a5a1995eb1baa81e92eae59a1032efb81" title=" " alt="" coords="265,107,311,133"/>
+<area shape="rect" id="node4" href="$server_8h.html#a0bb0e3e1429bfea5bd877ee3ee42c92c" title="Function that init the server struct parameters." alt="" coords="104,31,187,57"/>
+<area shape="rect" id="node7" href="$test__init__server_8c.html#a3e87cf7ec5bfe72c1cda96d815bc217e" title=" " alt="" coords="122,81,169,108"/>
+<area shape="rect" id="node5" href="$main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,56,32"/>
+<area shape="rect" id="node6" href="$test__init__server_8c.html#a4ad23d418459f164f1242593b797e87d" title=" " alt="" coords="7,56,54,83"/>
+</map>

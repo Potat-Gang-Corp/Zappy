@@ -1,0 +1,5 @@
+<map id="init_server_launch" name="init_server_launch">
+<area shape="rect" id="node1" title="Function that init the launch of the server." alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node2" href="$get__instance_8h.html#a98ba833762de1933d74b19d1f5f756c0" title="Function that return the server instance." alt="" coords="348,5,444,32"/>
+<area shape="rect" id="node3" href="$init__server_8c.html#aeacf721668bbb5a284dbcc819435bf67" title="Function that init the listening of the server." alt="" coords="180,31,300,57"/>
+</map>
