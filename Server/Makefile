@@ -48,26 +48,24 @@ $(NAME): $(OBJS)
 
 run: all
 	@$(ECHO) "$(MAGENTA)$(BOLD)Running $(NAME)...$(RESET)"
-	./$(NAME) -p 8080 -x 10 -y 10 -n name1 name2 -c 5 -f 100
+	./$(NAME) -p 8080 -x 10 -y 10 -n name1 name2 -c 5 -f 1
 
 $(TESTNAME): $(TOBJS) $(OBJS_NO_MAIN)
 	@$(ECHO) "$(CYAN)$(BOLD)Linking $(TESTNAME)...$(RESET)"
 	$(CC) -o $(TESTNAME) $(TOBJS) $(OBJS_NO_MAIN) $(CFLAGS) $(LDFLAGS)
 	@$(ECHO) "$(GREEN)$(BOLD)$(TESTNAME) compiled successfully!$(RESET)"
 
-##add something to not display on terminal
-
 tests_run: $(TESTNAME)
 	@$(ECHO) "$(MAGENTA)$(BOLD)Running unit tests...$(RESET)"
-	@./$(TESTNAME) > /dev/null 2>&1
+	@./$(TESTNAME)
 	@gcovr $(GCOVRFLAGS)
 	@gcovr $(GCOVRFLAGS) --html --html-details -o tests/coverage.html
 	@$(ECHO) "$(JAUNE)Coverage report generated in tests/coverage.html$(RESET)"
 
-
 run_ftests: all
 	@$(ECHO) "$(MAGENTA)$(BOLD)Running functional tests...$(RESET)"
 	@./tests/functional-tests/tests.sh
+	@./tests/functional-tests/tests_netcat.sh
 
 clean:
 	@$(ECHO) "$(RED)$(BOLD)Cleaning objects and temporary files...$(RESET)"
@@ -81,6 +79,7 @@ clean:
 	$(RM) coding-style-reports.log
 	$(RM) vgcore.*
 	$(RM) docs/
+	$(RM) *.txt
 
 fclean: clean
 	@$(ECHO) "$(RED)$(BOLD)Cleaning executable...$(RESET)"

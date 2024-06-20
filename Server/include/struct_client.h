@@ -7,6 +7,8 @@
 
 #ifndef STRUCT_H_
     #define STRUCT_H_
+
+    #include "my.h"
 /**
 * @file my.h
 * @brief defines the data structures used in the project for the
@@ -57,12 +59,15 @@ typedef struct client_s {
     position_t pos;
     char *team;
     bool evolving;
-    unsigned int cool_down;
+    unsigned int cd;
     inventory_t inventory;
     unsigned int level;
     int time_to_live;
-    bool status;
+    bool logged;
     int nb_commands;
+    bool graphic;
+    bool is_laying;
+    int egg_id_laying;
     struct client_s *next;
 } client_t;
 

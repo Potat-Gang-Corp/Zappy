@@ -28,15 +28,12 @@
     #include <errno.h>
     #include <stdio.h>
     #include <arpa/inet.h>
-    #include <sys/time.h>
+    #include <asm-generic/socket.h>
     #include <time.h>
-    #include <linux/time.h>
+    #include <ctype.h>
 
-int add_func(int a, int b);
-void second_init_map(map_t *map, int x, int y, int width);
-void init_map(map_t *map, int width, int height);
-map_t *initialize_map(int width, int height);
-void display(struct map_s *map);
-void display_suite(items_t *item);
+int place_egg_on_map(map_t *map);
+void display_egg_ll_for_each_team(void);
+int append_to_msg(char **msg, size_t *current_size, const char *new_content);
 
 #endif /* !MY_H_ */

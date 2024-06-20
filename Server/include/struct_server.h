@@ -38,7 +38,6 @@ typedef struct waiting_client_s {
 typedef struct command_s {
     int cli_id;
     char *command;
-    double execution_time;
     TAILQ_ENTRY(command_s) entries;
 } command_t;
 
@@ -52,11 +51,13 @@ typedef struct server_s {
     client_t *clients;
     TAILQ_HEAD(, waiting_client_s) waiting_list;
     TAILQ_HEAD(, command_s) commands;
+    TAILQ_HEAD(, command_s) commands_gui;
     int port;
     struct sockaddr_in sockaddr;
     fd_set readfs;
     fd_set writefds;
     int nb_players;
+    int nb_connected_players;
 } server_t;
 
 #endif /* !STRUCT_SERVER_H_ */

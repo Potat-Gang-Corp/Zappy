@@ -17,12 +17,19 @@
 */
 int main(int argc, char **argv)
 {
+    game_t *game = get_game_instance();
+
+    srand(time(NULL));
     if (handle_flags(argc, argv) == 84) {
         fprintf(stderr, "Error: In the flags can't launch server\n");
         return 84;
     }
     if (init_server() == 84) {
         fprintf(stderr, "Error: In the server can't launch server\n");
+        return 84;
+    }
+    if (initialize_map(game->width, game->height) == 84) {
+        fprintf(stderr, "Error: In the initialize_map can't launch server\n");
         return 84;
     }
     if (run_server() == 84) {
