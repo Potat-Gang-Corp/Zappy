@@ -83,6 +83,11 @@ static void setup_cli(client_t **new_client, int client_socket)
     (*new_client)->evolving = false;
     (*new_client)->time_to_live = 0;
     (*new_client)->next = NULL;
+    (*new_client)->is_laying = false;
+    (*new_client)->is_incanting = false;
+    (*new_client)->egg_id_laying = 0;
+    (*new_client)->cycle = 0;
+    (*new_client)->evolving = false;
     setup_inventory_cli(new_client);
 }
 
@@ -109,7 +114,7 @@ int add_client(int client_socket)
     client_t *new_client = calloc(1, sizeof(client_t));
 
     if (new_client == NULL) {
-        perror("malloc");
+        perror("calloc");
         close(client_socket);
         return 84;
     }
