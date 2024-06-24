@@ -44,8 +44,8 @@ int handle_team_full(client_t *cli, int i, char *team_name)
 
     if (game->teams[i]->max_clients < 1 && game->teams[i]->egg == NULL) {
         add_to_waiting_list(cli->socket, team_name);
-        write(cli->socket, "This team is full, please wait\n",
-            strlen("This team is full, please wait\n"));
+        write(cli->socket, "This team is full, please wait\n", 31);
+        return 1;
     } else {
         game->teams[i]->max_clients -= 1;
         len = snprintf(s, sizeof(s), "%d\n", game->teams[i]->max_clients);
@@ -55,8 +55,8 @@ int handle_team_full(client_t *cli, int i, char *team_name)
         write(cli->socket, coordinates, len);
         player_spawn(cli, i);
         notice_graphic_client(cli, team_name);
+        return 0;
     }
-    return 0;
 }
 
 int detect_team_validity(char *team_name, client_t *cli)
@@ -74,7 +74,7 @@ int detect_team_validity(char *team_name, client_t *cli)
             cli->logged = true;
             cli->graphic = true;
             notice_graphic_init(cli);
-            return 0;
+            return 2;
         }
     }
     return 84;
@@ -83,14 +83,19 @@ int detect_team_validity(char *team_name, client_t *cli)
 void handle_cli_login(client_t *cli, char *command)
 {
     char *msg = "Wrong team name, please try again\n";
+    int ret = 0;
 
-    if (cli->logged == false && detect_team_validity(command, cli) == 0) {
-        cli->id = get_instance()->client_id;
-        get_instance()->client_id++;
+    ret = detect_team_validity(command, cli);
+    if (ret == 2) {
         return;
     }
-    if (cli->logged == false && detect_team_validity(command, cli) == 84) {
+    if (cli->logged == false && ret == 0) {
+        return;
+    }
+    if (cli->logged == false && ret == 84) {
         write(cli->socket, msg, strlen(msg));
         return;
     }
+    cli->id = get_instance()->client_id;
+    get_instance()->client_id++;
 }

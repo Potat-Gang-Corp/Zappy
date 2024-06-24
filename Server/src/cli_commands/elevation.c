@@ -11,34 +11,28 @@
 #include "../../include/server.h"
 #include "../../include/commands.h"
 #include "../../include/map.h"
+#include "notifications.h"
 #include "elevation.h"
 
-static const elevation_requirements_t elevation_table[] = {
-    {1, 1, 0, 0, 0, 0, 0},
-    {2, 1, 1, 1, 0, 0, 0},
-    {2, 2, 0, 1, 0, 2, 0},
-    {4, 1, 1, 2, 0, 1, 0},
-    {4, 1, 2, 1, 3, 0, 0},
-    {6, 1, 2, 3, 0, 1, 0},
-    {6, 2, 2, 2, 2, 2, 1}
-};
-
-
-bool check_level_players(int x, int y, int level, int nb)
+bool check_level_players(client_t *s, int level, int nb)
 {
-    server_t *server = get_instance();
-    client_t *cli = server->clients;
-    int cpt = 0;
+    int cpt = 1;
+    int size = nb;
+    int *tab = malloc((size + 1) * sizeof(int));
 
-    for (; cli != NULL; cli = cli->next) {
-        if (cli->pos.x == x && cli->pos.y == y
-            && cli->level == (unsigned int)level) {
-            cpt++;
-        }
+    if (tab == NULL) {
+        perror("malloc");
+        return false;
     }
-    if (cpt == nb) {
+    tab[0] = s->id;
+    cpt = fill_tab(&tab, &size, s, cpt);
+    tab[cpt] = -1;
+    if (cpt >= nb) {
+        notice_gui_incantation(s->pos.x, s->pos.y, level, tab);
+        free(tab);
         return true;
     }
+    free(tab);
     return false;
 }
 
@@ -54,22 +48,6 @@ bool compare_structs(elevation_requirements_t *elevation_tab, int level)
         }
     }
     return (items_present == 0x3F);
-}
-
-static void increment_item(elevation_requirements_t *lvl_tab, item_type_t type)
-{
-    int *item_pointers[] = {
-        &lvl_tab->linemate,
-        &lvl_tab->deraumere,
-        &lvl_tab->sibur,
-        &lvl_tab->mendiane,
-        &lvl_tab->phiras,
-        &lvl_tab->thystame
-    };
-
-    if (type >= LINEMATE && type <= THYSTAME) {
-        (*item_pointers[type - LINEMATE])++;
-    }
 }
 
 void get_items_on_tile(int x, int y, elevation_requirements_t *elevation_tab)
@@ -92,9 +70,7 @@ int check_condition_incantation(client_t *cli)
     if (compare_structs(&elevation_tab, cli->level) == false) {
         return 0;
     }
-    if (cli->level <= 1)
-        return 1;
-    if (check_level_players(cli->pos.x, cli->pos.y, cli->level,
+    if (check_level_players(cli, cli->level,
         elevation_table[cli->level - 1].nb_players) == false) {
         return 0;
     }
