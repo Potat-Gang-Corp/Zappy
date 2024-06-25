@@ -10,6 +10,14 @@
 #include "commands_gui.h"
 #include "elevation.h"
 
+void check_egg_layed(client_t *cli)
+{
+    if (cli->cd == 0 && cli->is_laying == true) {
+        cli->is_laying = false;
+        client_fork_end(cli);
+    }
+}
+
 void handle_exec_chrono_task_bis(void)
 {
     handle_end_game();
@@ -17,6 +25,28 @@ void handle_exec_chrono_task_bis(void)
     handle_egg_laying();
     handle_renew_items();
     handle_incantation();
+}
+
+static void send_mct(client_t *cli)
+{
+    if (cli->cd >= 20) {
+        cli->cd = 0;
+        cmd_mct("mct", cli->socket);
+    } else {
+        cli->cd++;
+    }
+}
+
+void handle_non_graphic_client(client_t *cli)
+{
+    bool status;
+
+    lower_cli_cd(cli);
+    status = handle_player_death(cli);
+    if (status == false) {
+        return;
+    }
+    check_egg_layed(cli);
 }
 
 void execute_chrono_tasks(void)
@@ -32,11 +62,11 @@ void execute_chrono_tasks(void)
             continue;
         }
         if (cli->graphic) {
-            cmd_mct("mct", cli->socket);
+            send_mct(cli);
         } else {
-            lower_cli_cd(cli);
-            handle_player_death(cli);
+            handle_non_graphic_client(cli);
         }
         cli = next_cli;
     }
+    handle_exec_chrono_task_bis();
 }

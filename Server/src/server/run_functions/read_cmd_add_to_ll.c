@@ -15,97 +15,93 @@
 * @brief read and write command for the server
 */
 
+static int count_nb_cmd(client_t *cli)
+{
+    if (cli->nb_commands < 10) {
+        cli->nb_commands++;
+        return 0;
+    } else {
+        return 84;
+    }
+}
+
 int max_cmd_cli(int cli_id)
 {
     server_t *server = get_instance();
-    client_t *cli = NULL;
+    client_t *cli = server->clients;
 
-    for (cli = server->clients; cli != NULL; cli = cli->next) {
-        if (cli->socket == cli_id && cli->nb_commands < 10) {
-            cli->nb_commands++;
-            return 0;
+    while (cli != NULL) {
+        if (cli->socket == cli_id && cli->graphic != true) {
+            return count_nb_cmd(cli);
         }
-        if (cli->socket == cli_id && cli->nb_commands == 10) {
-            return 84;
-        }
+        cli = cli->next;
     }
     return 84;
 }
 
-static int separate_function(int cli_id, command_t *new_command)
+static int separate_function(int cli_socket, command_t *new_command)
 {
     server_t *server = get_instance();
 
-    if (is_gui(cli_id) == true)
+    if (is_gui(cli_socket))
         TAILQ_INSERT_TAIL(&server->commands_gui, new_command, entries);
     else
         TAILQ_INSERT_TAIL(&server->commands, new_command, entries);
     return 0;
 }
 
-int add_cmd_to_ll(int cli_id, const char *cmd)
+int add_cmd_to_ll(int cli_socket, const char *cmd)
 {
-    command_t *new_command = malloc(sizeof(command_t));
+    command_t *new_command;
 
-    if (new_command == NULL) {
+    new_command = malloc(sizeof(command_t));
+    if (!new_command) {
         perror("malloc");
         return 84;
     }
-    if (max_cmd_cli(cli_id) == 84 || cmd[0] == '\0') {
+    if (max_cmd_cli(cli_socket) == 84 || cmd[0] == '\0' || cmd[0] == '\n') {
         free(new_command);
         return 84;
     }
-    new_command->cli_id = cli_id;
+    new_command->cli_id = cli_socket;
     new_command->command = strdup(cmd);
-    if (new_command->command == NULL) {
+    if (!new_command->command) {
         perror("strdup");
         free(new_command);
         return 84;
     }
-    separate_function(cli_id, new_command);
+    separate_function(cli_socket, new_command);
     return 0;
 }
 
 void read_buffer_to_list(client_t *cli)
 {
-    char *buffer;
-    char *cmd;
-    char *saveptr = NULL;
+    char *b = read_cli_cmd(cli->socket);
+    char *c;
+    char *sptr = NULL;
 
-    buffer = read_cli_cmd(cli->socket);
-    if (buffer == NULL) {
+    if (!b || b[0] == '\0' || b[0] == '\n') {
+        free(b);
         return;
     }
-    if (buffer[0] == '\0' || buffer[0] == '\n') {
-        free(buffer);
-        return;
+    for (c = strtok_r(b, "\n", &sptr); c; c = strtok_r(NULL, "\n", &sptr)) {
+        if (*c != '\0') {
+            add_cmd_to_ll(cli->socket, c);
+        }
     }
-    for (cmd = strtok_r(buffer, "\n", &saveptr);
-        cmd != NULL; cmd = strtok_r(NULL, "\n", &saveptr)) {
-        if (*cmd == '\0')
-            continue;
-        add_cmd_to_ll(cli->socket, cmd);
-    }
-    free(buffer);
+    free(b);
 }
 
 int handle_clients(void)
 {
     server_t *server = get_instance();
     client_t *cli = server->clients;
-    client_t *next = NULL;
+    client_t *next;
 
     while (cli != NULL) {
         next = cli->next;
-        if (cli->socket <= 0 || !FD_ISSET(cli->socket, &server->readfs)) {
-            cli = next;
-            continue;
-        }
-        if (cli->cd == 0 && cli->is_laying == true) {
-            cli->is_laying = false;
-            client_fork_end(cli);
-        }
-        read_buffer_to_list(cli);
+        if (cli->socket > 0 && FD_ISSET(cli->socket, &server->readfs))
+            read_buffer_to_list(cli);
         cli = next;
     }
     return 0;

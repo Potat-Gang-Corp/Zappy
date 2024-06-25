@@ -14,32 +14,37 @@
 void notice_player_death_event(client_t *cli)
 {
     server_t *server = get_instance();
-    client_t *graphic = NULL;
+    client_t *cli_ll = NULL;
 
-    for (graphic = server->clients; graphic != NULL; graphic = graphic->next) {
-        if (graphic->graphic == true) {
-            dprintf(graphic->socket, "pdi #%d\n", cli->id);
+    signal(SIGPIPE, SIG_IGN);
+    for (cli_ll = server->clients; cli_ll != NULL; cli_ll = cli_ll->next) {
+        if (cli_ll->graphic == true) {
+            dprintf(cli_ll->socket, "pdi #%d\n", cli->id);
         }
     }
     dprintf(cli->socket, "dead\n");
 }
 
-void update_player_status(client_t *cli)
+bool update_player_status(client_t *cli)
 {
     if (cli->inventory.food == 0) {
         notice_player_death_event(cli);
-        remove_client(cli->socket);
+        remove_client(cli->socket, true);
+        return false;
     } else {
         cli->time_to_live += 126;
         cli->inventory.food--;
+        return true;
     }
 }
 
-void handle_player_death(client_t *cli)
+bool handle_player_death(client_t *cli)
 {
-    if (cli->time_to_live > 0)
+    if (cli->time_to_live > 0) {
         cli->time_to_live--;
-    if (cli->time_to_live == 0) {
-        update_player_status(cli);
+        return true;
+    } else if (cli->time_to_live == 0) {
+        return update_player_status(cli);
     }
+    return true;
 }

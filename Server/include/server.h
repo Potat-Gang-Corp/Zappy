@@ -202,7 +202,7 @@ int select_function(void);
  * and if the team is full or not.
  * @return return noting.
  */
-void handle_cli_login(client_t *cli, char *command);
+int handle_cli_login(client_t *cli, char *command);
 
 /**
  * @brief Function to check if the team name is valid or not
@@ -329,7 +329,7 @@ double current_time_millis(void);
  * @details will remove the client from the linked list.
  * @return return 0 if everything's good or 84 if an error occured.
  */
-int remove_client(int cli_socket);
+int remove_client(int cli_socket, bool flag);
 
 //read_and_print_cmd.c
 
@@ -520,7 +520,7 @@ int handle_team_full(client_t *cli, int team_index, char *team_name);
  * @details will remove the found client from the linked list.
  * @return return 0 if everything's good or 84 if an error occured.
  */
-int remove_found_client(client_t *prev, client_t *cli);
+int remove_found_client(client_t *prev, client_t *cli, bool flag);
 
 /**
  * @brief Function to find the client and the previous client
@@ -611,7 +611,7 @@ item_type_t get_item_type(const char *item_name);
 void delete_item_from_tiles(tile_t *tile, item_type_t type);
 int checking_item_existence(items_t *item, item_type_t type);
 
-void handle_player_death(client_t *cli);
+bool handle_player_death(client_t *cli);
 
 bool is_gui(int cli_id);
 int lower_cli_cd(client_t *cli);

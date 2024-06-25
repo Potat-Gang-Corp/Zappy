@@ -40,19 +40,19 @@ int handle_team_full(client_t *cli, int i, char *team_name)
     game_t *game = get_game_instance();
     char s[1024];
     char coordinates[1024];
-    int len;
 
     if (game->teams[i]->max_clients < 1 && game->teams[i]->egg == NULL) {
         add_to_waiting_list(cli->socket, team_name);
-        write(cli->socket, "This team is full, please wait\n", 31);
+        dprintf(cli->socket, "This team is full, please wait\n");
+        remove_client(cli->socket, false);
         return 1;
     } else {
         game->teams[i]->max_clients -= 1;
-        len = snprintf(s, sizeof(s), "%d\n", game->teams[i]->max_clients);
-        write(cli->socket, s, len);
-        len = snprintf(coordinates, sizeof(coordinates),
+        snprintf(s, sizeof(s), "%d\n", game->teams[i]->max_clients);
+        dprintf(cli->socket, "%s\n", s);
+        snprintf(coordinates, sizeof(coordinates),
             "%d %d\n", game->width, game->height);
-        write(cli->socket, coordinates, len);
+        dprintf(cli->socket, "%s\n", coordinates);
         player_spawn(cli, i);
         return 0;
     }
@@ -73,29 +73,32 @@ int detect_team_validity(char *team_name, client_t *cli)
             cli->logged = true;
             cli->graphic = true;
             notice_graphic_init(cli);
+            print_all_teams_eggs(cli);
+            cli->cd = 0;
             return 2;
         }
     }
     return 84;
 }
 
-void handle_cli_login(client_t *cli, char *command)
+int handle_cli_login(client_t *cli, char *command)
 {
     char *msg = "Wrong team name, please try again\n";
     int ret = 0;
 
     ret = detect_team_validity(command, cli);
     if (ret == 2) {
-        return;
+        return 2;
     }
-    if (cli->logged == false && ret == 0) {
-        return;
+    if (ret == 1) {
+        return 1;
     }
     if (cli->logged == false && ret == 84) {
-        write(cli->socket, msg, strlen(msg));
-        return;
+        dprintf(cli->socket, "%s\n", msg);
+        return 84;
     }
     cli->id = get_instance()->client_id;
     get_instance()->client_id++;
     notice_graphic_client(cli, cli->team);
+    return 0;
 }
