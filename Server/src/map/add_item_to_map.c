@@ -9,6 +9,7 @@
 #include "struct_map.h"
 #include "get_instance.h"
 #include "server.h"
+#include "map.h"
 /**
 * @file add_item_to_map.c
 * @brief add item to map
@@ -31,14 +32,6 @@ const char *get_items(item_type_t item)
     const char *item_name = functions[item]();
 
     return item_name;
-}
-
-void display_item(items_t *item)
-{
-    while (item) {
-        printf("Item: %s\n", get_items(item->type));
-        item = item->next;
-    }
 }
 
 void add_item_to_tiles(tile_t *tile, item_type_t type)
