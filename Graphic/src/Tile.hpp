@@ -42,6 +42,7 @@ class Tile : public IRenderable, public IClickable {
         void addEgg(int id, Vector3 position, int resourceIndex);
         void removeEgg(int id);
         Model getModel() override final { return _model; }
+        Vector3 getEggPosition(int id) { return _eggs[id].position; }
 
     private:
         Vector3 _position;

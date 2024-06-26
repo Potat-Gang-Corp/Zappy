@@ -104,7 +104,6 @@ void Tile::setResources(const std::vector<int>& resources)
     }
 }
 
-
 std::vector<int> Tile::getResources() const
 {
     return _resources;

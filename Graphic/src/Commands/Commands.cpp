@@ -43,7 +43,6 @@ void Commands::bct(const std::string &data)
 
 void Commands::pbc(const std::string &data)
 {
-    std::cout << "Handling pbc: " << data << std::endl;
     std::istringstream iss(data);
     std::string command;
     std::string player_id;
@@ -51,8 +50,8 @@ void Commands::pbc(const std::string &data)
     iss >> command;
     iss >> player_id;
     iss >> message;
-    std::cout << "Player id: " << player_id << std::endl;
-    std::cout << "Message: " << message << std::endl;
+
+    SoundWrap::getInstance()->playSoundWithVolumeAdjustment(ModelsLoader::getInstance()->getSound("BroadCast"));
 }
 
 void Commands::pdr(const std::string &data)
@@ -65,13 +64,17 @@ void Commands::pdr(const std::string &data)
     player_id = player_id.substr(1);
 
     GameEnginePtr PlayerManager = GameEngine::getInstance();
-    PlayerManager->getPlayers()[std::stoi(player_id)]->removeInventory(std::stoi(ressource_number), 1);
-    PlayerManager->addResourceTail(PlayerManager->getPlayers()[std::stoi(player_id)]->getPosition().x / 10, PlayerManager->getPlayers()[std::stoi(player_id)]->getPosition().z / 10, std::stoi(ressource_number), 1);
+    auto player = PlayerManager->getPlayers();
+    for (auto &p : player) {
+        if (p->getId() == std::stoi(player_id)) {
+            p->removeInventory(std::stoi(ressource_number), 1);
+            break;
+        }
+    }
 }
 
 void Commands::pgt(const std::string &data)
 {
-    // ressources collected by player
     std::istringstream iss(data);
     std::string command;
     std::string player_id;
@@ -79,9 +82,14 @@ void Commands::pgt(const std::string &data)
     iss >> command >> player_id >> ressource_number;
     player_id = player_id.substr(1);
 
-    // GameEnginePtr playerManager = GameEngine::getInstance();
-    // playerManager->getPlayers()[std::stoi(player_id)]->addInventory(std::stoi(ressource_number), 1);
-    // playerManager->removeResourceTail(playerManager->getPlayers()[std::stoi(player_id)]->getPosition().x / 10, playerManager->getPlayers()[std::stoi(player_id)]->getPosition().z / 10, std::stoi(ressource_number), 1);
+    GameEnginePtr PlayerManager = GameEngine::getInstance();
+    auto player = PlayerManager->getPlayers();
+    for (auto &p : player) {
+        if (p->getId() == std::stoi(player_id)) {
+            p->addInventory(std::stoi(ressource_number), 1);
+            break;
+        }
+    }
 }
 
 void Commands::pex(const std::string &data)
@@ -91,6 +99,8 @@ void Commands::pex(const std::string &data)
     std::string player_id;
     iss >> command;
     iss >> player_id;
+
+    SoundWrap::getInstance()->playSoundWithVolumeAdjustment(ModelsLoader::getInstance()->getSound("Eject"));
 }
 
 void Commands::pfk(const std::string &data)
@@ -100,6 +110,7 @@ void Commands::pfk(const std::string &data)
     std::string player_id;
     iss >> command;
     iss >> player_id;
+    player_id = player_id.substr(1);
 }
 
 
@@ -115,8 +126,6 @@ void Commands::pic(const std::string &data)
         std::cerr << "Failed to parse command, x, y, and level\n";
         return;
     }
-
-    SoundWrap::getInstance()->playSoundWithVolumeAdjustment(ModelsLoader::getInstance()->getSound("BroadCast"));
 
     if (currentPlayers.size() > 0)
         currentPlayers.clear();
@@ -251,6 +260,17 @@ void Commands::pdi(const std::string &data)
     std::string player_id;
     iss >> command;
     iss >> player_id;
+    player_id = player_id.substr(1);
+
+    GameEnginePtr PlayerManager = GameEngine::getInstance();
+    auto player = PlayerManager->getPlayers();
+    for (auto &p : player) {
+        if (p->getId() == std::stoi(player_id)) {
+            PlayerManager->RemovePlayer(std::stoi(player_id));
+            SoundWrap::getInstance()->playSoundWithVolumeAdjustment(ModelsLoader::getInstance()->getSound("Death"));
+            break;
+        }
+    }
 }
 
 void Commands::enw(const std::string &data)
@@ -265,13 +285,9 @@ void Commands::enw(const std::string &data)
     player_id = player_id.substr(1);
     egg_id = egg_id.substr(1);
 
-    // GameEnginePtr playerManager = GameEngine::getInstance();
-    // playerManager->addResourceTail(std::stoi(x), std::stoi(y), 7, 1);
-
-    //_inventory[]
-    // MapPtr map = Map::getInstance();
-    // map->addResource(std::stoi(x), std::stoi(y), Resource::RessourceType::EGG, 1);
-    // map->addEgg(std::stoi(x), std::stoi(y), std::stoi(egg_id));
+    GameEnginePtr PlayerManager = GameEngine::getInstance();
+    auto player = PlayerManager->getPlayers();
+    PlayerManager->addEgg(std::stoi(egg_id), std::stoi(x), std::stoi(y), 7);
 }
 
 void Commands::ebo(const std::string &data)
@@ -282,11 +298,8 @@ void Commands::ebo(const std::string &data)
     iss >> command >> egg_id;
     egg_id = egg_id.substr(1);
 
-    // GameEnginePtr playerManager = GameEngine::getInstance();
-    // playerManager->removeResourceTail(playerManager->getPlayers()[std::stoi(egg_id)]->getPosition().x / 10, playerManager->getPlayers()[std::stoi(egg_id)]->getPosition().z / 10, 7, 1);
-//     MapPtr map = Map::getInstance();
-//     map->removeResource(map->getEggX(std::stoi(egg_id)), map->getEggY(std::stoi(egg_id)),  Resource::RessourceType::EGG, 1);
-//     map->removeEgg(std::stoi(egg_id));
+    GameEnginePtr PlayerManager = GameEngine::getInstance();
+    PlayerManager->RemoveEgg(stoi(egg_id));
 }
 
 void Commands::edi(const std::string &data)
@@ -296,9 +309,9 @@ void Commands::edi(const std::string &data)
     std::string egg_id;
     iss >> command >> egg_id;
     egg_id = egg_id.substr(1);
-    // MapPtr map = Map::getInstance();
-    // map->removeResource(map->getEggX(std::stoi(egg_id)), map->getEggY(std::stoi(egg_id)),  Resource::RessourceType::EGG, 1);
-    // map->removeEgg(std::stoi(egg_id));
+
+    GameEnginePtr PlayerManager = GameEngine::getInstance();
+    PlayerManager->RemoveEgg(stoi(egg_id));
 }
 
 void Commands::sgt(const std::string &data)

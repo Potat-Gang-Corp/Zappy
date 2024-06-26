@@ -189,6 +189,19 @@ void GameEngine::AddPlayer(int id, int x, int y, int orientation, const std::str
     _clickables.push_back(player);
 }
 
+void GameEngine::RemovePlayer(int id)
+{
+    auto player = std::find_if(_players.begin(), _players.end(), [id](const std::shared_ptr<Player>& player) {
+        return player->getId() == id;
+    });
+
+    if (player != _players.end()) {
+        _renderables.erase(std::find(_renderables.begin(), _renderables.end(), *player));
+        _clickables.erase(std::find(_clickables.begin(), _clickables.end(), *player));
+        _players.erase(player);
+    }
+}
+
 void GameEngine::addFullPlayer(Player player)
 {
     auto newPlayer = std::make_shared<Player>(player);
@@ -230,6 +243,13 @@ void GameEngine::addEgg(int id, int x, int y, int resourceIndex)
     int index = x * _sizeY + y;
     if (index >= 0 && index < _tiles.size()) {
         _tiles[index]->addEgg(id, {x * 10.0f, 0.0f, y * 10.0f}, resourceIndex);
+    }
+}
+
+void GameEngine::RemoveEgg(int id)
+{
+    for (auto& tile : _tiles) {
+        tile->removeEgg(id);
     }
 }
 

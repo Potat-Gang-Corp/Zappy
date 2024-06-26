@@ -56,6 +56,8 @@ class GameEngine {
         void addResourceTail(int x, int y, int resourceIndex, int amount);
         void addEgg(int id, int x, int y, int resourceIndex);
         void handleFrequency();
+        void RemovePlayer(int id);
+        void RemoveEgg(int id);
 
     private:
         void Update(float deltaTime);

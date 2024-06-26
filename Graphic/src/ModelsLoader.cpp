@@ -64,6 +64,7 @@ ModelsLoader::ModelsLoader()
             {"Youpi", LoadSound("assets/sounds/youpi.mp3")},
             {"Connection", LoadSound("assets/sounds/connection.mp3")},
             {"Death", LoadSound("assets/sounds/death.mp3")},
+            {"Eject", LoadSound("assets/sounds/eject.mp3")},
         };
     } catch (const std::exception &e) {
         std::cerr << "Error in ModelsLoader: " << e.what() << std::endl;
