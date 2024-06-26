@@ -1,4 +1,4 @@
 zappy_server
 zappy_gui
-.vscode
-assets/
+.vscode*
+a.out
