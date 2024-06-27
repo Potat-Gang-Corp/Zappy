@@ -50,7 +50,6 @@ void Commands::pbc(const std::string &data)
     iss >> command >> player_id >> message;
 
     if (broadcastStatus[player_id]) {
-        std::cout << "Player " << player_id << " has already broadcasted." << std::endl;
         return;
     }
     broadcastStatus[player_id] = true;
@@ -131,7 +130,6 @@ void Commands::pic(const std::string &data)
     auto &playersAtPos = currentPlayers[{x, y}];
     playersAtPos.clear();
     while (iss >> player_id) {
-        std::cout << "Player_id = " << player_id << std::endl;
         playersAtPos.push_back(player_id);
     }
 }
@@ -149,9 +147,7 @@ void Commands::pie(const std::string &data)
         auto player = PlayerManager->getPlayers();
         auto &playersAtPos = currentPlayers[{x, y}];
         for (auto &id : playersAtPos) {
-            std::cout << "Id = " << id << std::endl;
             id = id.substr(1);
-            std::cout << "Id = " << id << std::endl;
             for (auto &p : player) {
                 if (p->getId() == std::stoi(id)) {
                     p->setPlayerLevel(p->getLevel() + 1);
@@ -265,7 +261,6 @@ void Commands::pdi(const std::string &data)
     GameEnginePtr PlayerManager = GameEngine::getInstance();
     auto player = PlayerManager->getPlayers();
     for (auto &p : player) {
-        std::cout << "Id = " << std::stoi(player_id) << std::endl;
         if (p->getId() == std::stoi(player_id)) {
             PlayerManager->RemovePlayer(std::stoi(player_id));
             SoundWrap::getInstance()->playSoundWithVolumeAdjustment(ModelsLoader::getInstance()->getSound("Death"));
@@ -365,10 +360,10 @@ void Commands::smg(const std::string &data)
 
 void Commands::suc(const std::string &data)
 {
-    std::cout << "Handling suc: " << data << std::endl;
+    return;
 }
 
 void Commands::sbp(const std::string &data)
 {
-    std::cout << "Handling sbp: " << data << std::endl;
+    return;
 }

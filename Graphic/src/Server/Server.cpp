@@ -71,7 +71,6 @@ void Server::listening()
 {
     while (true) {
         std::string response = receive_data();
-        std::cout << "Received: " << response << std::endl;
         if (response != "ko\n" && response != "WELCOME\n" && response != "Connected\n") {
             CommandFactory::getInstance()->execCommand(response);
         }
