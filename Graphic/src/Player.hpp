@@ -40,6 +40,7 @@ class Player : public IRenderable, public IClickable {
         void playAnimation(const std::string& animationPath);
         void addInventory(int resourceIndex, int amount);
         void removeInventory(int resourceIndex, int amount);
+        void setInventory(const std::vector<int>& inventory);
 
         int getLevel() {
             return _level;

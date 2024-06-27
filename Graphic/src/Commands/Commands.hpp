@@ -248,7 +248,14 @@ class Commands {
         void sbp(const std::string &data);
 
     private:
-        std::vector<std::string> currentPlayers;
+        struct pair_hash {
+            template <class T1, class T2>
+            std::size_t operator() (const std::pair<T1, T2> &pair) const {
+                return std::hash<T1>()(pair.first) ^ std::hash<T2>()(pair.second);
+            }
+        };
+        std::unordered_map<std::pair<int, int>, std::vector<std::string>, pair_hash> currentPlayers;
+        std::unordered_map<std::string, bool> broadcastStatus;
         bool _sleeped = false;
 };
 

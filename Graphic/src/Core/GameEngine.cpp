@@ -81,12 +81,26 @@ void GameEngine::Initialize()
     _lightWrapper->createlight(lightPosition, Vector3Zero(), YELLOW);
 }
 
+void GameEngine::askinventory(int freq)
+{
+    auto now = std::chrono::steady_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::seconds>(now - _lastSendTime).count();
+    if (duration >= freq / _freq) {
+        for (auto& player : _players) {
+            Server::getInstance()->send_data("pin #" + std::to_string(player->getId()) + "\n");
+        }
+        _lastSendTime = std::chrono::steady_clock::now();
+    }
+}
+
 void GameEngine::Run()
 {
     Initialize();
     const float cycleDuration = 180.0f;
     const float dayPhaseDuration = cycleDuration / 4.0f;
+    const float sendFrequency = 126.0f;
     float currentTime, cycleTime;
+    _lastSendTime = std::chrono::steady_clock::now();
 
     while (!WindowShouldClose()) {
         currentTime = GetTime();
@@ -102,6 +116,7 @@ void GameEngine::Run()
             _hud->ClearMessages();
         }
         handleFrequency();
+        askinventory(sendFrequency);
         // if (_isRunning == false) {
             
         // }
@@ -157,19 +172,29 @@ void GameEngine::Update(float deltaTime)
 
 void GameEngine::Render()
 {
-    BeginDrawing();
-    ClearBackground(_lightWrapper->getCurrentBackgroundColor());
-    DrawText(TextFormat("Frequency: %d", _freq), 100, 10, 20, DARKGREEN);
-    BeginMode3D(_camera->getCamera());
-    for (auto &renderable : _renderables)
-        renderable->Render();
-    _lightWrapper->drawSphereOnLights();
+    try {
+        std::cerr << "Start Render()" << std::endl;
+        BeginDrawing();
+        ClearBackground(_lightWrapper->getCurrentBackgroundColor());
+        DrawText(TextFormat("Frequency: %d", _freq), 100, 10, 20, DARKGREEN);
+        BeginMode3D(_camera->getCamera());
 
-    EndMode3D();
+        for (auto &renderable : _renderables) {
+            if (renderable) {
+                renderable->Render();
+            }
+        }
 
-    _hud->Render();
+        _lightWrapper->drawSphereOnLights();
+        EndMode3D();
 
-    EndDrawing();
+        _hud->Render();
+        EndDrawing();
+    } catch (const std::exception& e) {
+        std::cerr << "Exception caught in Render(): " << e.what() << std::endl;
+    } catch (...) {
+        std::cerr << "Unknown exception caught in Render()" << std::endl;
+    }
 }
 
 void GameEngine::UpdateTileResources(int x, int y, const std::vector<int>& resources)
