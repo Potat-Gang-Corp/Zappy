@@ -32,39 +32,39 @@ ModelsLoader::ModelsLoader()
 {
     try {
         _models = {
-            {"Island_farm", LoadModelSafely("Graphic/assets/island_farm.glb")},
-            {"Island_tree", LoadModelSafely("Graphic/assets/island_tree.glb")},
-            {"Island", LoadModelSafely("Graphic/assets/island.glb")},
-            {"FOOD", LoadModelSafely("Graphic/assets/potato.glb")},
-            {"LINEMATE", LoadModelSafely("Graphic/assets/mine1.glb")},
-            {"DERAUMERE", LoadModelSafely("Graphic/assets/mine2.glb")},
-            {"SIBUR", LoadModelSafely("Graphic/assets/mine3.glb")},
-            {"MENDIANE", LoadModelSafely("Graphic/assets/mine4.glb")},
-            {"PHIRAS", LoadModelSafely("Graphic/assets/mine5.glb")},
-            {"THYSTAME", LoadModelSafely("Graphic/assets/mine6.glb")},
-            {"EGG", LoadModelSafely("Graphic/assets/Egg.glb")},
-            {"PlayerModel", LoadModelSafely("Graphic/assets/player.glb")}
+            {"Island_farm", LoadModelSafely("assets/island_farm.glb")},
+            {"Island_tree", LoadModelSafely("assets/island_tree.glb")},
+            {"Island", LoadModelSafely("assets/island.glb")},
+            {"FOOD", LoadModelSafely("assets/potato.glb")},
+            {"LINEMATE", LoadModelSafely("assets/mine1.glb")},
+            {"DERAUMERE", LoadModelSafely("assets/mine2.glb")},
+            {"SIBUR", LoadModelSafely("assets/mine3.glb")},
+            {"MENDIANE", LoadModelSafely("assets/mine4.glb")},
+            {"PHIRAS", LoadModelSafely("assets/mine5.glb")},
+            {"THYSTAME", LoadModelSafely("assets/mine6.glb")},
+            {"EGG", LoadModelSafely("assets/Egg.glb")},
+            {"PlayerModel", LoadModelSafely("assets/player.glb")}
         };
 
         _anims = {
-            {"Player", LoadModelAnimationsSafely("Graphic/assets/player.glb")},
-            {"Dying", LoadModelAnimationsSafely("Graphic/assets/animation/dying.glb")},
-            {"Dropping", LoadModelAnimationsSafely("Graphic/assets/animation/dropping.glb")},
-            {"LevelUp", LoadModelAnimationsSafely("Graphic/assets/animation/level_up.glb")},
-            {"Hands", LoadModelAnimationsSafely("Graphic/assets/animation/hands.glb")}
+            {"Player", LoadModelAnimationsSafely("assets/player.glb")},
+            {"Dying", LoadModelAnimationsSafely("assets/animation/dying.glb")},
+            {"Dropping", LoadModelAnimationsSafely("assets/animation/dropping.glb")},
+            {"LevelUp", LoadModelAnimationsSafely("assets/animation/level_up.glb")},
+            {"Hands", LoadModelAnimationsSafely("assets/animation/hands.glb")}
         };
 
         _music = {
-            {"Ambient", LoadMusicStream("Graphic/assets/sounds/ambient_music.mp3")},
-            {"EndGame", LoadMusicStream("Graphic/assets/sounds/endgame.mp3")},
+            {"Ambient", LoadMusicStream("assets/sounds/ambient_music.mp3")},
+            {"EndGame", LoadMusicStream("assets/sounds/endgame.mp3")},
         };
 
         _sounds = {
-            {"BroadCast", LoadSound("Graphic/assets/sounds/broadcast.mp3")},
-            {"Youpi", LoadSound("Graphic/assets/sounds/youpi.mp3")},
-            {"Connection", LoadSound("Graphic/assets/sounds/connection.mp3")},
-            {"Death", LoadSound("Graphic/assets/sounds/death.mp3")},
-            {"Eject", LoadSound("Graphic/assets/sounds/eject.mp3")},
+            {"BroadCast", LoadSound("assets/sounds/broadcast.mp3")},
+            {"Youpi", LoadSound("assets/sounds/youpi.mp3")},
+            {"Connection", LoadSound("assets/sounds/connection.mp3")},
+            {"Death", LoadSound("assets/sounds/death.mp3")},
+            {"Eject", LoadSound("assets/sounds/eject.mp3")},
         };
     } catch (const std::exception &e) {
         std::cerr << "Error in ModelsLoader: " << e.what() << std::endl;

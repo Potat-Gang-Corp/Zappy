@@ -47,10 +47,13 @@ void Commands::pbc(const std::string &data)
     std::string command;
     std::string player_id;
     std::string message;
-    iss >> command;
-    iss >> player_id;
-    iss >> message;
+    iss >> command >> player_id >> message;
 
+    if (broadcastStatus[player_id]) {
+        std::cout << "Player " << player_id << " has already broadcasted." << std::endl;
+        return;
+    }
+    broadcastStatus[player_id] = true;
     SoundWrap::getInstance()->playSoundWithVolumeAdjustment(ModelsLoader::getInstance()->getSound("BroadCast"));
 }
 
@@ -113,13 +116,11 @@ void Commands::pfk(const std::string &data)
     player_id = player_id.substr(1);
 }
 
-
 void Commands::pic(const std::string &data)
 {
     std::istringstream iss(data);
     std::string command;
-    std::string x;
-    std::string y;
+    int x, y;
     std::string level;
     std::string player_id;
     if (!(iss >> command >> x >> y >> level)) {
@@ -127,10 +128,11 @@ void Commands::pic(const std::string &data)
         return;
     }
 
-    if (currentPlayers.size() > 0)
-        currentPlayers.clear();
+    auto &playersAtPos = currentPlayers[{x, y}];
+    playersAtPos.clear();
     while (iss >> player_id) {
-        currentPlayers.push_back(player_id);
+        std::cout << "Player_id = " << player_id << std::endl;
+        playersAtPos.push_back(player_id);
     }
 }
 
@@ -138,29 +140,28 @@ void Commands::pie(const std::string &data)
 {
     std::istringstream iss(data);
     std::string command;
-    std::string x;
-    std::string y;
+    int x, y;
     std::string result;
 
-    iss >> command;
-    iss >> x;
-    iss >> y;
-    iss >> result;
+    iss >> command >> x >> y >> result;
     if (result == "ok") {
         GameEnginePtr PlayerManager = GameEngine::getInstance();
         auto player = PlayerManager->getPlayers();
-        for (auto &id : currentPlayers) {
+        auto &playersAtPos = currentPlayers[{x, y}];
+        for (auto &id : playersAtPos) {
+            std::cout << "Id = " << id << std::endl;
             id = id.substr(1);
+            std::cout << "Id = " << id << std::endl;
             for (auto &p : player) {
                 if (p->getId() == std::stoi(id)) {
                     p->setPlayerLevel(p->getLevel() + 1);
                 }
             }
+            broadcastStatus[id] = false;
         }
         SoundWrap::getInstance()->playSoundWithVolumeAdjustment(ModelsLoader::getInstance()->getSound("Youpi"));
-    } else {
-        currentPlayers.clear();
     }
+    currentPlayers.erase({x, y});
 }
 
 void Commands::pin(const std::string &data)
@@ -180,15 +181,14 @@ void Commands::pin(const std::string &data)
     iss >> command >> player_id >> x >> y >> food >> linemate >> deraumere >> sibur >> mendiane >> phiras >> thystame;
     player_id = player_id.substr(1);
 
-    GameEnginePtr playerManager = GameEngine::getInstance();
-    auto &player = playerManager->getPlayers()[std::stoi(player_id)];
-    player->addInventory(0, std::stoi(food));
-    player->addInventory(1, std::stoi(linemate));
-    player->addInventory(2, std::stoi(deraumere));
-    player->addInventory(3, std::stoi(sibur));
-    player->addInventory(4, std::stoi(mendiane));
-    player->addInventory(5, std::stoi(phiras));
-    player->addInventory(6, std::stoi(thystame));
+    GameEnginePtr PlayerManager = GameEngine::getInstance();
+    auto player = PlayerManager->getPlayers();
+    for (auto &p : player) {
+        if (p->getId() == std::stoi(player_id)) {
+            p->setInventory({std::stoi(food), std::stoi(linemate), std::stoi(deraumere), std::stoi(sibur), std::stoi(mendiane), std::stoi(phiras), std::stoi(thystame), 0});
+            break;
+        }
+    }
 }
 
 void Commands::plv(const std::string &data)
@@ -265,6 +265,7 @@ void Commands::pdi(const std::string &data)
     GameEnginePtr PlayerManager = GameEngine::getInstance();
     auto player = PlayerManager->getPlayers();
     for (auto &p : player) {
+        std::cout << "Id = " << std::stoi(player_id) << std::endl;
         if (p->getId() == std::stoi(player_id)) {
             PlayerManager->RemovePlayer(std::stoi(player_id));
             SoundWrap::getInstance()->playSoundWithVolumeAdjustment(ModelsLoader::getInstance()->getSound("Death"));

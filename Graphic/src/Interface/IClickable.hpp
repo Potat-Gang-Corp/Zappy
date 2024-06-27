@@ -15,7 +15,7 @@ class IClickable {
         virtual void OnClick() = 0;
         virtual void setHover(bool status) = 0;
         virtual BoundingBox getBoundingBox() const = 0;
-        virtual ~IClickable() = default;
+        ~IClickable() = default;
 };
 
 #endif // ICLICKABLE_HPP

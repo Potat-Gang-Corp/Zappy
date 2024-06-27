@@ -9,7 +9,7 @@
 
 LightWrapper::LightWrapper()
 {
-    _shader = LoadShader("Graphic/assets/lighting.vs", "Graphic/assets/lighting.fs");
+    _shader = LoadShader("assets/lighting.vs", "assets/lighting.fs");
     _shader.locs[SHADER_LOC_VECTOR_VIEW] = GetShaderLocation(_shader, "viewPos");
     int ambientLoc = GetShaderLocation(_shader, "ambient");
     float ambient[4] = { 0.1f, 0.1f, 0.1f, 1.0f };

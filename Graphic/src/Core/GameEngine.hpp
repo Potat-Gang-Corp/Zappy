@@ -24,6 +24,7 @@
     #include "Light.hpp"
     #include "SoundWrap.hpp"
     #include <ostream>
+    #include <chrono>
 
 class GameEngine {
     public:
@@ -58,6 +59,7 @@ class GameEngine {
         void handleFrequency();
         void RemovePlayer(int id);
         void RemoveEgg(int id);
+        void askinventory(int freq);
 
     private:
         void Update(float deltaTime);
@@ -74,6 +76,7 @@ class GameEngine {
         std::shared_ptr<LightWrapper> _lightWrapper;
         std::shared_ptr<HUD> _hud;
         Rectangle _buttonAdd, _buttonRemove;
+        std::chrono::steady_clock::time_point _lastSendTime;
         Model _tileModel;
         bool _isRunning = true;
         float _sizeX = 0;

@@ -146,6 +146,15 @@ void Player::addInventory(int resourceIndex, int amount)
     }
 }
 
+void Player::setInventory(const std::vector<int>& inventory)
+{
+    if (inventory.size() == 8) {
+        for (size_t i = 0; i < _inventory.size() - 1; ++i) {
+            _inventory[i] = inventory[i];
+        }
+    }
+}
+
 void Player::removeInventory(int resourceIndex, int amount)
 {
     if (resourceIndex >= 0 && resourceIndex < _inventory.size() && _inventory[resourceIndex] >= amount) {
