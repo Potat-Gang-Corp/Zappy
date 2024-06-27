@@ -1,5 +1,0 @@
-<map id="setup_command_collect" name="setup_command_collect">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,168,57"/>
-<area shape="rect" id="node2" href="$get__instance_8h.html#a1703d587886f74328ade68d9dccf9b03" title="Function that return the game instance." alt="" coords="216,5,351,32"/>
-<area shape="rect" id="node3" href="$get__instance_8h.html#a98ba833762de1933d74b19d1f5f756c0" title="Function that return the server instance." alt="" coords="235,56,331,83"/>
-</map>

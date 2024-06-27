@@ -1,6 +1,0 @@
-<map id="handle_team_full" name="handle_team_full">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,125,57"/>
-<area shape="rect" id="node2" href="$server_8h.html#a0874a9e14eb0bcbd592535245e3157f8" title="Function that add the client to the waiting list." alt="" coords="174,5,307,32"/>
-<area shape="rect" id="node4" href="$get__instance_8h.html#a1703d587886f74328ade68d9dccf9b03" title="Function that return the game instance." alt="" coords="173,56,308,83"/>
-<area shape="rect" id="node3" href="$get__instance_8h.html#a98ba833762de1933d74b19d1f5f756c0" title="Function that return the server instance." alt="" coords="356,5,452,32"/>
-</map>

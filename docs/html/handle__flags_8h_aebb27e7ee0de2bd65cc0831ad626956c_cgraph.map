@@ -1,6 +1,0 @@
-<map id="n_flag_detection" name="n_flag_detection">
-<area shape="rect" id="node1" title="Function that check the existence of the definition for the n flag." alt="" coords="5,56,123,83"/>
-<area shape="rect" id="node2" href="$handle__flags_8h.html#ac5aac555ed0e1ba8cf1401d5ed40d25c" title="Function that check the existence of a definition for a flag." alt="" coords="171,5,249,32"/>
-<area shape="rect" id="node3" href="$get__instance_8h.html#a1703d587886f74328ade68d9dccf9b03" title="Function that return the game instance." alt="" coords="297,81,432,108"/>
-<area shape="rect" id="node4" href="$handle__n__c__f_8c.html#a121f1dd0a33dc9fdcbb1661461111efa" title="Function that check the existence of a definition for n flag." alt="" coords="173,107,247,133"/>
-</map>

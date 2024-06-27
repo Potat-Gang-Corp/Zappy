@@ -1,6 +1,0 @@
-<map id="Test" name="Test">
-<area shape="rect" id="node1" title=" " alt="" coords="5,22,52,49"/>
-<area shape="rect" id="node2" href="$get__instance_8h.html#a98ba833762de1933d74b19d1f5f756c0" title="Function that return the server instance." alt="" coords="245,22,341,49"/>
-<area shape="rect" id="node3" href="$server_8h.html#a125a40ad0f3e1223dd09a8a1bc3a4a34" title="Function that init the socket of the server." alt="" coords="106,22,191,49"/>
-<area shape="rect" id="node4" href="$test__init__server_8c.html#a2081dd4d0c9345635697c82e47659c6a" title=" " alt="" coords="100,73,197,100"/>
-</map>

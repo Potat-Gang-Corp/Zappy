@@ -1,6 +1,0 @@
-<map id="Test" name="Test">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,52,57"/>
-<area shape="rect" id="node2" href="$server_8h.html#a0874a9e14eb0bcbd592535245e3157f8" title="Function that add the client to the waiting list." alt="" coords="105,5,239,32"/>
-<area shape="rect" id="node4" href="$server_8h.html#aafbbd7590d74e659f380143875dbbfd5" title="Function to detect if the client is waiting." alt="" coords="100,56,244,83"/>
-<area shape="rect" id="node3" href="$get__instance_8h.html#a98ba833762de1933d74b19d1f5f756c0" title="Function that return the server instance." alt="" coords="292,31,388,57"/>
-</map>

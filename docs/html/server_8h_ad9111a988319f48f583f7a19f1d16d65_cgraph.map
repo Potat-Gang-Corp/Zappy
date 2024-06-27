@@ -1,5 +1,0 @@
-<map id="execute_game_cmd" name="execute_game_cmd">
-<area shape="rect" id="node1" title="Function to execute the game commands." alt="" coords="5,31,144,57"/>
-<area shape="rect" id="node2" href="$handling__game__command_8c.html#a8cc150e3ff2182727a5789b3820130da" title="Function to compare the command type." alt="" coords="204,5,291,32"/>
-<area shape="rect" id="node3" href="$handling__game__command_8c.html#a36f66045fe51c77e2d32f6f0b1168dbb" title="Function to compare the command type." alt="" coords="192,56,303,83"/>
-</map>

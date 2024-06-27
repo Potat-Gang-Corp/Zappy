@@ -34,5 +34,6 @@ fclean: clean
 	@make fclean -C Server/
 	@make fclean -C IA/
 	@make fclean -C Graphic/
+	-rm -rf docs
 
 re: fclean all

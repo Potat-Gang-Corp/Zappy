@@ -1,9 +1,0 @@
-<map id="Test" name="Test">
-<area shape="rect" id="node1" title=" " alt="" coords="5,64,52,91"/>
-<area shape="rect" id="node2" href="$get__instance_8h.html#a98ba833762de1933d74b19d1f5f756c0" title="Function that return the server instance." alt="" coords="597,83,693,109"/>
-<area shape="rect" id="node3" href="$server_8h.html#a789b65ecefcb9d373e1c47afe8783eeb" title="Function that init the construction process of the server." alt="" coords="100,64,207,91"/>
-<area shape="rect" id="node7" href="$test__init__server_8c.html#a2081dd4d0c9345635697c82e47659c6a" title=" " alt="" coords="441,209,538,236"/>
-<area shape="rect" id="node4" href="$init__server_8c.html#afc5512e5c2b10ac4e860137b226a98ec" title="Function that init the launch of the server." alt="" coords="255,64,381,91"/>
-<area shape="rect" id="node6" href="$init__server_8c.html#a125a40ad0f3e1223dd09a8a1bc3a4a34" title="Function that init the socket of the server." alt="" coords="275,127,361,153"/>
-<area shape="rect" id="node5" href="$init__server_8c.html#aeacf721668bbb5a284dbcc819435bf67" title="Function that init the listening of the server." alt="" coords="429,108,549,135"/>
-</map>

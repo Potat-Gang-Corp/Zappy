@@ -1,6 +1,0 @@
-<map id="accept_new_client" name="accept_new_client">
-<area shape="rect" id="node1" title="Function that accept a new client connection." alt="" coords="5,31,136,57"/>
-<area shape="rect" id="node2" href="$accept__cli_8c.html#aca123e9977ec88571a1210e13f274fa2" title="Function that define the client parameters." alt="" coords="184,5,265,32"/>
-<area shape="rect" id="node4" href="$get__instance_8h.html#a98ba833762de1933d74b19d1f5f756c0" title="Function that return the server instance." alt="" coords="456,31,552,57"/>
-<area shape="rect" id="node3" href="$accept__cli_8c.html#a491f93117ac15bf3cc9ad692644970fe" title=" " alt="" coords="313,5,408,32"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="remove_client" name="remove_client">
-<area shape="rect" id="node1" title="Function to remove a client from the linked list." alt="" coords="5,31,108,57"/>
-<area shape="rect" id="node2" href="$op__cli__ll_8c.html#ad43e5a807c1e2297439ae3575761dce7" title=" " alt="" coords="157,5,298,32"/>
-<area shape="rect" id="node4" href="$op__cli__ll_8c.html#a094556c205d2ddd296673a068c4f5758" title=" " alt="" coords="156,56,299,83"/>
-<area shape="rect" id="node3" href="$get__instance_8h.html#a98ba833762de1933d74b19d1f5f756c0" title="Function that return the server instance." alt="" coords="347,31,443,57"/>
-</map>
