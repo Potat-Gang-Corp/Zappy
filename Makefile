@@ -20,7 +20,7 @@ zappy_ai:
 
 zappy_gui:
 	@make -C Graphic/
-	mv Graphic/zappy_graphic .
+	mv Graphic/zappy_gui .
 
 clean:
 	@make clean -C Server/
